@@ -46,7 +46,7 @@ function randLetter() {
   return letter;
 }
 
-// Call the random letter generator
+// Call the random letter generator and set the winning letter
 let newLetter = randLetter();
 console.log(newLetter);
 
@@ -63,9 +63,6 @@ function reset() {
   intGuesses = 9;
   document.getElementById('guessesLeft').innerHTML = intGuesses;
 
-  // Clear the key pressed div
-  document.getElementById('keyPressed').innerHTML = '';
-
   // Clear the array
   arrGuesses = [];
   console.log(arrGuesses);
@@ -73,9 +70,6 @@ function reset() {
 }
 
 // Function that gets the pressed key,
-// stores it in an array,
-// and then displays the key pressed and array
-// decrements the guess remaining
 function keyPressed(event) {
   const x = event.key;
 
@@ -86,15 +80,9 @@ function keyPressed(event) {
     arrGuesses.push(x);
     console.log(arrGuesses);
 
-    // Display the pressed key
-    document.getElementById('keyPressed').innerHTML = x;
-
     // Display the remaining guesses
-    // Get the current guesses value
-
+    // Decrement by one
     intGuesses -= 1;
-    // let currGuesses = document.getElementById('guessesLeft').innerHTML;
-    // currGuesses = Number(currGuesses);
     document.getElementById('guessesLeft').innerHTML = intGuesses;
 
     // Display the guesses so far
@@ -106,11 +94,7 @@ function keyPressed(event) {
   if (x === newLetter) {
     console.log('Match');
 
-    // Increment the win
-    // Get the current value of wins
-    // let currWin = document.getElementById('wins').innerHTML;
-    // Convert to a number
-    // currWin = Number(currWin);
+    // Increment the win and display
     intWins += 1;
     document.getElementById('wins').innerHTML = intWins;
 
@@ -118,14 +102,12 @@ function keyPressed(event) {
     reset();
   }
 
-  // IF guesses = 0
+  // IF guesses gets to 0, user losses
+  // Increment losses by 1 and display
   if (intGuesses === 0) {
-    console.log('loss!!!!!!!!!');
+    console.log('You Lose');
     console.log(intLosses);
     intLosses += 1;
-
-    // Increment the Losses
-    // document.getElementById('losses').innerHTML = 'Test';
     document.getElementById('losses').innerHTML = intLosses;
 
     // Reset All
