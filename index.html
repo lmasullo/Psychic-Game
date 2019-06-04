@@ -18,11 +18,26 @@
       crossorigin="anonymous"
     />
 
+    <link rel="stylesheet" href="assets/css/style.css" />
+
     <title>Psychic Game</title>
   </head>
-  <body>
-    <h1>Psychic Game!</h1>
-
+  <body onkeydown="keyPressed(event)">
+    <div class="container">
+      <h1>The Psychic Game!</h1>
+      <br />
+      <h2>Guess what letter I'm thinking of?</h2>
+      <br />
+      <span>Wins: </span><span id="wins"></span>
+      <br>
+      <span>Losses: </span><span id="losses"></span>
+      <br>
+      <span>Guesses Left: </span><span id="guessesLeft"></span>
+      <br>
+      <span>Guesses So Far: </span><span id="dispGuesses"></span>
+      <br>
+      <span>The Key Pressed: </span><span id="keyPressed"></spa>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
