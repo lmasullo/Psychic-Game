@@ -69,8 +69,10 @@ function reset() {
   document.getElementById('dispGuesses').innerHTML = '';
 }
 
-// Function that gets the pressed key,
-function keyPressed(event) {
+// Function that gets the pressed key
+// document.onkeyup = function(event)
+// function keyPressed(event) {
+document.onkeyup = function keyPressed(event) {
   const x = event.key;
 
   // add to array if not already in the array
@@ -113,4 +115,4 @@ function keyPressed(event) {
     // Reset All
     reset();
   }
-} // End function keyPressed
+}; // End function keyPressed
